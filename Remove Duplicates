@@ -1,0 +1,19 @@
+### Linear Search and trac konly distinct. Print upto the tracker(j)
+
+
+public static void removeDuplicates(int[] a)
+    {
+        int n=a.length;
+        int i=0,j=0;
+
+        while(i<n-2)
+        {
+            if(a[i]!=a[i+1])
+            {
+                a[j++]=a[i];
+            }
+            i++;
+        }
+        a[j]=a[n-1];
+
+    }
