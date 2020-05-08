@@ -1,0 +1,15 @@
+ ## Basic finding the number of occurence of a number
+ 
+ public static void findnumber(int[] a,int x)
+    {
+        int n=a.length;
+        int count=0;
+        for (int i = 0; i < n; i++)
+        {
+            if(a[i]==x)
+            {
+                count++;
+            }
+        }
+        System.out.println((count));
+    }
