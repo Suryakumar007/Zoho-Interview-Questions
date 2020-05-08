@@ -1,0 +1,37 @@
+### Sort in Odd descending and Even ascending
+
+public static void specificOrderSort(int a[])
+    {
+        int left=0,right=a.length-1,temp=0;
+
+        while(left<=right)
+        {
+            if(a[left]%2==0)
+            {
+                temp=a[left];
+                a[left]=a[right];
+                a[right]=temp;
+                right--;
+            }
+            else
+            {
+                left++;
+            }
+        }
+        for (int i = 0; i < left; i++) {
+            for (int j = i + 1; j < left; j++) {
+                if (a[i] < a[j]) {
+                    temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
+                }
+            }
+        }
+
+        java.util.Arrays.sort(a,left,a.length);
+
+
+        for(int x : a)
+            System.out.println(x);
+
+    }
