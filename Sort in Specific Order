@@ -1,4 +1,5 @@
 ### Sort in Odd descending and Even ascending
+### Use Two pointer or negative multiplication
 
 public static void specificOrderSort(int a[])
     {
