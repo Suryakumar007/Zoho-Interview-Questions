@@ -1,0 +1,22 @@
+### Two pointer approach
+
+public static int[] binarySort(int[] a)
+    {
+        int n=a.length;
+        int left=0,right=n-1,temp=0;
+        while(left<right)
+        {
+            if(a[left]==1)
+            {
+                temp=a[left];
+                a[left]=a[right];
+                a[right]=temp;
+                right--;
+            }
+            else
+            {
+                left++;
+            }
+        }
+        return a;
+    }
