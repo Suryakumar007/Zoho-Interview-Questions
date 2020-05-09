@@ -1,0 +1,19 @@
+### Normal nested Loop. Queue can be used
+
+public static void maxKsubarray(int[] a, int k)
+    {
+        int n=a.length;
+        int max=0;
+        for(int i=0;i<=n-k;i++)
+        {
+            max=a[i];
+            for(int j=1;j<k;j++)
+            {
+                if(a[i+j]>max)
+                {
+                    max=a[i+j];
+                }
+            }
+            System.out.println(max);
+        }
+    }
