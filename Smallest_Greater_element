@@ -1,0 +1,44 @@
+### Normal nested loop or Set
+
+#include<bits/stdc++.h>
+using namespace std;
+
+void arraygreat(int a[],int n)
+{
+	for(int i=0;i<n;i++)
+	{
+		int diff=INT_MAX, closest=INT_MIN;
+		for(int j=0;j<n;j++)
+		{
+			if(a[i]<a[j] && a[j]-a[i]<diff)
+			{
+				diff=a[j]-a[i];
+				closest=a[j];
+			}
+		}
+		(closest==INT_MIN)? cout<<"_ " : cout<< closest<<" ";
+	}
+	cout<<endl;
+	
+}
+
+int main() 
+{
+    int T;
+	cin>>T;
+	
+	while(T--)
+	{
+		int n;
+		cin>>n;
+		
+		int a[n];
+		
+		for(int i=0;i<n;i++)
+			cin>>a[i];
+			
+		arraygreat(a,n);
+	}
+    
+	return 0;
+}
