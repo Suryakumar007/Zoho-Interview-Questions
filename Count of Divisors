@@ -1,0 +1,41 @@
+### If divisible by k, add divisor else add +1
+
+#include<iostream>
+using namespace std;
+int main()
+ {
+	int T;
+	cin>>T;
+	
+	while(T--)
+	{
+	    int n;
+	    cin>>n;
+	    
+	    int k;
+	    cin>>k;
+	    
+	    int a[n];
+	    
+	    for(int i=0;i<n;i++)
+	    {
+	        cin>>a[i];
+	    }
+	    
+	    int result=0;
+	    
+	    for(int i=0;i<n;i++)
+	    {
+	        if(a[i]%k==0)
+	        {
+	         result+=a[i]/k;   
+	        }
+	        else
+	        {
+	            result= result+(a[i]/k)+1;
+	        }
+	    }
+	    cout<<result<<endl;
+	}
+	return 0;
+}
