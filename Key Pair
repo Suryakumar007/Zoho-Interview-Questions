@@ -1,0 +1,27 @@
+### 
+
+public static void keyPair(int a[],int sum)
+    {
+        java.util.Arrays.sort(a);
+        int l=0,r=a.length-1;
+        int sum1=0,flag=0;
+
+        while(l<r)
+        {
+            sum1=a[l]+a[r];
+            if(sum==sum1)
+            {
+                System.out.println("Yes");
+                flag++;
+                break;
+            }
+            else if(sum1<sum)
+                l++;
+            else
+                r--;
+        }
+
+        if(flag==0)
+        System.out.println("NO");
+
+    }
