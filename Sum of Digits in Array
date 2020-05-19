@@ -1,0 +1,40 @@
+### Old school method of carry!!
+
+ public static void digitsumArray(int[] a, int[] b)
+    {
+        int n=a.length;
+        int m=b.length;
+        int k=n-1;
+
+        int i=n-1;
+        int j=m-1;
+        int carry=0,s=0;
+
+
+        int[] sum= new int[n];
+
+        while(j>=0)
+        {
+            s=a[i]+b[j]+carry;
+            sum[k]=s%10;
+            carry=s/10;
+
+            i--;j--;k--;
+        }
+        int ans=0;
+
+        if(carry==1)
+        {
+            ans=10;
+        }
+
+        for(i=0;i<n-1;i++)
+        {
+            ans=ans+sum[i];
+            ans=ans*10;
+        }
+
+        System.out.println(ans);
+
+
+    }
