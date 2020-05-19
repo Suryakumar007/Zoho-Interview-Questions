@@ -1,0 +1,27 @@
+### Traverse from beginning with whole sum and subtracting
+
+public static void equilibriumPoint(int[] a)
+    {
+        int n=a.length;
+        int totalsum=0,leftsum=0;
+
+        for(int i=0;i<n;i++)
+        {
+            totalsum+=a[i];
+        }
+
+        for(int i=0;i<n;i++)
+        {
+            totalsum=totalsum-a[i];
+
+            if(totalsum==leftsum)
+            {
+                System.out.println(i);
+            }
+            else
+            {
+                leftsum+=a[i];
+            }
+        }
+
+    }
