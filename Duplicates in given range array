@@ -1,0 +1,27 @@
+### Count array
+
+public static void duplicatesInRange(int a[],int n)
+    {
+        int[] count = new int[n];
+        int countflag=0;
+
+        for(int i=0;i<n;i++)
+        {
+            count[a[i]]++;
+        }
+
+        for(int i=0;i<n;i++)
+        {
+            if(count[i]>1)
+            {
+                System.out.print((i)+ " ");
+                countflag++;
+            }
+        }
+
+        if(countflag==0)
+        {
+            System.out.println(-1);
+        }
+
+    }
