@@ -1,0 +1,62 @@
+### Number to Words
+
+#include <iostream>
+#include <vector>
+#include<bits/stdc++.h>
+using namespace std;
+
+int getbase(int num)
+{
+	if(num/1000) return 1000;
+	if(num/100) return 100;
+}
+
+string basetoword(int num)
+{
+	if(num/1000) return "thousand";
+	
+	if(num/100) return "hundred";
+}
+
+string numtoword(int num)
+{
+	string out="";
+	
+	string ones[]={"","one","two","three","four","five","six","seven","eight","nine","ten"};
+	
+	string teens[]={"","eleven","twelve","thirteen","fourteen","fifteen","sixteen","seventeen","eighteen","nineteen"};
+	
+	string tens[]={"","","twenty","thirty","forty","fifty","sixty","seventy","eighty","ninety"};
+	
+	if(num<=10)
+	{
+		out= ones[num];
+	}
+	
+	else if(num>10 && num<=19)
+	{
+		cout<<"came";
+		out =teens[num%10];
+	}
+	
+	else if(num>19 && num<100)
+	{
+		out= tens[num/10] +" "+ ones[num%10];
+	}
+	
+	else
+	{
+		int m=getbase(num);
+		out=numtoword(num/m) +" "+ basetoword(num) +" "+ numtoword(num%m);
+	}
+	//cout<<out;
+	return out;	
+}
+
+int main()
+{
+	int n=7774;
+	string s=numtoword(n);
+	cout<<s;
+    return 0;
+}
