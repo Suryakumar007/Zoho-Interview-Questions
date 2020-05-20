@@ -1,0 +1,25 @@
+### 
+
+public static void subarraySum(int a[],int sum)
+    {
+        int n=a.length;
+        int currsum=0,i=0;
+        int start=0;
+        for(;i<=n;i++)
+        {
+
+            if(currsum>sum)
+            {
+                i=++start;
+                currsum=0;
+            }
+            else if(currsum==sum)
+            {
+                System.out.println(start+" "+i);
+                return;
+            }
+
+            currsum+=a[i];
+
+        }
+    }
